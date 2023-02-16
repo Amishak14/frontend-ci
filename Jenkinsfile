@@ -83,7 +83,7 @@ pipeline {
       
       stage("Trigger frontend deployment Pipeline"){
         steps{
-         build job:'frontend-deployment-pipeline' , parameters: [string(name: 'DOCKERTAG',value: env.BUILD_NUMBER)]
+         build job:'frontend-cd-pipeline' , parameters: [string(name: 'DOCKERTAG',value: env.BUILD_NUMBER)]
            //build job:'tag-pipeline' , parameters: [string(name: 'DOCKERTAG',value: COMMIT_ID)]
         }
       }
